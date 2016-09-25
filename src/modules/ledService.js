@@ -44,6 +44,13 @@ let draw = () => {
 	blinkt.draw();
 };
 
+/**
+ * register process cleanup here
+ */
+process.on('exit', () => {
+	off();
+});
+
 module.exports = {
 	getAll: getAll,
 	setPixels: setPixels,
