@@ -18,21 +18,31 @@ let getAll = () => {
 	return leds;
 };
 
-let setPixels = (pixelData) => {
-	if (!Array.isArray(pixelData)) {
-		pixelData = [pixelData];
+let setPixels = (ledData) => {
+	if (!Array.isArray(ledData)) {
+		ledData = [ledData];
 	}
 
-	pixelData.forEach( (pixel) => {
-		blinkt.setPixel(pixel.number, pixel.r, pixel.g, pixel.b, pixel.a);
+	ledData.forEach( (pixel) => {
+		if (pixel.number < 0 || pixel.number > 7) { return; }
+
+		leds[pixel.number].set(pixel.r, pixel.g, pixel.b, pixel.a);
 	});
 
-	blinkt.draw();
+	draw();
 };
 
 let off = () => {
 	blinkt.off();
-}
+};
+
+let draw = () => {
+	leds.forEach( (pixel) => {
+		blinkt.setPixel(pixel.number, pixel.red, pixel.green, pixel.blue, pixel.brightness);
+	});
+
+	blinkt.draw();
+};
 
 module.exports = {
 	getAll: getAll,
