@@ -1,0 +1,34 @@
+{
+  "name": "blinkt-web-api",
+  "version": "0.1.0",
+  "description": "Blinktjs restful api",
+  "main": "./src/index.js",
+  "dependencies": {
+    "blinktjs": "^0.8.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinkkis/blinkt-web-api.git"
+  },
+  "keywords": [
+    "blinkt",
+    "blinktjs",
+    "express",
+    "api",
+    "neopixel",
+    "rgb",
+    "led"
+  ],
+  "author": "Kristian Koivisto-Kokko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinkkis/blinkt-web-api/issues"
+  },
+  "homepage": "https://github.com/pinkkis/blinkt-web-api#readme"
+}
